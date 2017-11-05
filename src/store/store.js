@@ -1,32 +1,20 @@
-import Vue from 'Vue'
+// 状态管理器
+import Vue from 'vue'
 import Vuex from 'vuex'
-
-// 引入 axios
-import axios from 'axios'
-
+import actions from './action'
+import mutations from './mutation'
 Vue.use(Vuex)
 
 const store = new Vuex.Store({
-  // 定义状态
-  state: {
-    test01: {
-      name: 'Wise Wrong'
-    },
-    test02: {
-      tell: '12312345678'
-    }
+  state:{
+    show: '',
   },
-  actions: {
-    // 封装一个 ajax 方法
-    saveForm (context) {
-      axios({
-        method: 'post',
-        url: '/user',
-        data: context.state.test02
-      })
+  actions,
+  mutations,
+  getters:{
+    show(state){
+      return state.show
     }
   }
 })
-
 export default store
-   

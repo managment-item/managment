@@ -1,17 +1,17 @@
 <template>
   <div class="mains">
         <el-container>
+          <el-aside width="200px">
+            <slide></slide>
+          </el-aside>
+          <el-container>
             <el-header>
-                  <Head1></Head1>  
+              <head1></head1>
             </el-header>
-            <el-container>
-                <el-aside width="300px">
-                    <Slide></Slide>
-                </el-aside>
-                <el-main>
-                    <router-view></router-view>
-                </el-main>
-            </el-container>
+            <el-main>
+              <router-view></router-view>
+            </el-main>
+          </el-container>
         </el-container>
   </div>
 </template>
@@ -23,13 +23,16 @@ export default {
   name:"mains",
   components: {
       Head1,Slide
-  }
+  },
 
 }
 </script>
 
 <style scoped>
-
+.el-aside{
+  height: 100%;
+  background: #2b2d3c
+}
 </style>
 
 
