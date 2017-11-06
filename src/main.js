@@ -13,8 +13,8 @@ import './assets/css/reset.css'
 // 引入mock模拟数据
 require('./mock')
 //引入ajax请求
-// import axios from "axios"
-// Vue.prototype.$http = axios
+import axios from "axios"
+Vue.prototype.$http = axios
 
 //引入elementui框架
 import ElementUI from 'element-ui'

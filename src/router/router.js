@@ -4,6 +4,7 @@ import Help from "./../views/head/help.vue"
 import Message from "./../views/head/message.vue"
 import Information from "./../views/head/personal_information.vue"
 import Setting from "./../views/head/setting.vue"
+import Stand_data_managment from "./../views/head/stand_data_managment.vue"
 
 
 const routers=[
@@ -35,6 +36,11 @@ const routers=[
             name:"setting",
             path:"/setting",
             component:Setting,
+          },
+          {
+            name:"stand_data_managment",
+            path:"/stand_data_managment",
+            component:Stand_data_managment,
           },
         ]
     },
