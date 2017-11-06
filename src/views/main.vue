@@ -1,6 +1,6 @@
 <template>
   <div class="mains">
-        <el-container>
+        <el-container class="mainContainer">
           <el-aside width="200px" v-show="show">
             <slide></slide>
           </el-aside>
@@ -41,6 +41,8 @@ export default {
   height: 100%;
   background: #2b2d3c
 }
+.mains{height: 100%}
+.mainContainer{height: 100%}
 </style>
 
 
