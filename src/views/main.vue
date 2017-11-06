@@ -1,7 +1,7 @@
 <template>
   <div class="mains">
         <el-container>
-          <el-aside width="200px">
+          <el-aside width="200px" v-show="show">
             <slide></slide>
           </el-aside>
           <el-container>
@@ -17,14 +17,22 @@
 </template>
 
 <script>
+import { mapGetters, mapActions } from "vuex";
 import Head1 from "./../components/header"
 import Slide from "./../components/silde"
 export default {
   name:"mains",
+  data(){
+    return{
+
+    }
+  },
   components: {
       Head1,Slide
   },
-
+   computed: {
+    ...mapGetters(["show"])
+  },
 }
 </script>
 

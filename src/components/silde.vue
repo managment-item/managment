@@ -1,6 +1,6 @@
 <template>
   <div class="silde">
-        <div class="own">
+        <div class="own" v-show="show">
           <img src="./../assets/img/own.png" alt="">
           <h2>John.Smith</h2>
         </div>
@@ -105,7 +105,9 @@ import { mapGetters, mapActions } from "vuex";
 export default {
   name: "silde",
   data() {
-    return {};
+    return {
+
+    };
   },
   computed: {
     ...mapGetters(["show"])

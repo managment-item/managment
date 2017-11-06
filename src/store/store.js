@@ -7,12 +7,13 @@ Vue.use(Vuex)
 
 const store = new Vuex.Store({
   state:{
-    show: '',
+    show: true,
   },
   actions,
   mutations,
   getters:{
     show(state){
+      console.log(state.show)
       return state.show
     }
   }
