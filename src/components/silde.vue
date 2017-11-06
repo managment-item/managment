@@ -13,7 +13,8 @@
       @close="handleClose"
       background-color="#2b2d3c"
       text-color="#fff"
-      active-text-color="#ffd04b">
+      active-text-color="#ffd04b"
+      unique-opened='true'>
       <el-submenu index="1">
         <template slot="title">
           <i @click="change" class="el-icon-location"></i>
