@@ -1,12 +1,7 @@
 <template>
   <div class="mains">
-<<<<<<< HEAD
-        <el-container>
-          <el-aside>
-=======
         <el-container class="mainContainer">
-          <el-aside width="200px" v-show="show">
->>>>>>> 8202afa24923bbc0eb8faaab74892f68f612df0c
+          <el-aside>
             <slide></slide>
           </el-aside>
           <el-container>
@@ -47,17 +42,12 @@ export default {
   height: 100%;
   background: #2b2d3c
 }
-<<<<<<< HEAD
 .el-header{
   padding: 0px!important;
 }
 .el-main{
   background: #F7F7FB;
 }
-=======
-.mains{height: 100%}
-.mainContainer{height: 100%}
->>>>>>> 8202afa24923bbc0eb8faaab74892f68f612df0c
 </style>
 
 
