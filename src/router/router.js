@@ -1,6 +1,9 @@
-import Hello from "./../components/HelloWorld.vue"
 import Login1 from "./../views/login.vue"
 import Main from "./../views/main.vue"
+import Help from "./../views/head/help.vue"
+import Message from "./../views/head/message.vue"
+import Information from "./../views/head/personal_information.vue"
+import Setting from "./../views/head/setting.vue"
 
 
 const routers=[
@@ -12,7 +15,29 @@ const routers=[
         name:"main",
         path:"/main",
         component:Main,
-    }
+        children:[
+          {
+            name:"help",
+            path:"/help",
+            component:Help,
+          },
+          {
+            name:"message",
+            path:"/message",
+            component:Message,
+          },
+          {
+            name:"information",
+            path:"/information",
+            component:Information,
+          },
+          {
+            name:"setting",
+            path:"/setting",
+            component:Setting,
+          },
+        ]
+    },
 ]
 
 export default routers

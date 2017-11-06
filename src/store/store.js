@@ -7,7 +7,7 @@ Vue.use(Vuex)
 
 const store = new Vuex.Store({
   state:{
-    show: true,
+    show: false,
   },
   actions,
   mutations,

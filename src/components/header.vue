@@ -1,7 +1,27 @@
 <template>
   <div class="header">
-    <i class="el-icon-menu" @click="show"></i>
-    <img src="./../assets/img/logo.png" alt="">
+      <div class="header1">
+        <i class="el-icon-menu" @click="show"></i>
+        <img src="./../assets/img/logo.png" alt="" class="logo">
+      </div>
+    <div class="search clearfix">
+    <el-menu
+      :default-active="activeIndex"
+      class="el-menu-demo"
+      mode="horizontal"
+      active-text-color="#ffd04b">
+      <el-menu-item index="1"><a href="/help">帮助中心</a></el-menu-item>
+      <el-menu-item index="2">云</el-menu-item>
+      <el-menu-item index="3"><i class="el-icon-search"></i></el-menu-item>
+      <el-menu-item index="4"><a href="/message"><i class="el-icon-bell"></i></a></el-menu-item>
+      <el-submenu index="5">
+        <template slot="title">账号设置</template>
+        <el-menu-item index="5-1"><a href="/information">个人信息</a></el-menu-item>
+        <el-menu-item index="5-2"><a href="/setting">个人设置</a></el-menu-item>
+      </el-submenu>
+      <el-menu-item index="6"><a href="/"><i class="el-icon-circle-close-outline"></i></a></el-menu-item>
+    </el-menu>
+    </div>
   </div>
 </template>
 
@@ -13,6 +33,7 @@ export default {
   data() {
     return {
       input: false,
+      activeIndex: '1'
     };
   },
   mounted: function() {
@@ -23,14 +44,14 @@ export default {
   },
   methods: {
     show: function() {
-      this.$store.dispatch("newShow", this.input);
       this.input =!this.input;
+      this.$store.dispatch("newShow", this.input);
     },
     fetchData: async function() {
       let params = {};
       const res = await http.get(api.right, params);
       if (res.data.success) {
-        alert("请求成功");
+        // alert("请求成功");
       }
     }
   }
@@ -38,9 +59,26 @@ export default {
 </script>
 
 <style scoped>
+.header{
+  height: 54px;
+  line-height: 54px;
+  /* overflow: hidden; */
+}
+.header1{
+  padding-left:10px;
+  float: left;
+}
 .el-icon-menu{
+  display: inline-block;
   font-size: 40px;
   cursor: pointer;
+  vertical-align: middle;
+}
+.logo{
+  padding-left: 10px;
+}
+.search{
+  float:right;
 }
 </style>
 

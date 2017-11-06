@@ -1,7 +1,7 @@
 <template>
   <div class="mains">
         <el-container>
-          <el-aside width="200px" v-show="show">
+          <el-aside>
             <slide></slide>
           </el-aside>
           <el-container>
@@ -38,8 +38,15 @@ export default {
 
 <style scoped>
 .el-aside{
+  width: auto!important;
   height: 100%;
   background: #2b2d3c
+}
+.el-header{
+  padding: 0px!important;
+}
+.el-main{
+  background: #F7F7FB;
 }
 </style>
 

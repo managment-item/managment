@@ -1,12 +1,14 @@
 <template>
   <div class="silde">
-        <div class="own" v-show="show">
-          <img src="./../assets/img/own.png" alt="">
-          <h2>John.Smith</h2>
+        <div class="own">
+          <img src="./../assets/img/own.png" alt="" width="64px">
+          <h2>John<span v-show="!show">.Smith</span></h2>
         </div>
         <el-menu
-      default-active="1"
+      default-active="1-1"
       class="el-menu-vertical-demo"
+      :unique-opened="true"
+      :collapse="show"
       @open="handleOpen"
       @close="handleClose"
       background-color="#2b2d3c"
@@ -14,7 +16,7 @@
       active-text-color="#ffd04b">
       <el-submenu index="1">
         <template slot="title">
-          <i class="el-icon-location"></i>
+          <i @click="change" class="el-icon-location"></i>
           <span>医疗数据管理</span>
         </template>
         <el-menu-item-group>
@@ -106,24 +108,33 @@ export default {
   name: "silde",
   data() {
     return {
-
+      // isCollapse:false
     };
   },
   computed: {
     ...mapGetters(["show"])
   },
   methods: {
+    change:function(){
+        this.show=!show
+      //  this.$store.dispatch("newShow", this.input);
+    },
     handleOpen(key, keyPath) {
       console.log(key, keyPath);
     },
     handleClose(key, keyPath) {
       console.log(key, keyPath);
+      // this.show=!this.show
     }
   }
 };
 </script>
 
 <style scoped>
+.el-menu-vertical-demo:not(.el-menu--collapse) {
+  width: 200px;
+  min-height: 400px;
+}
 .silde {
   width: 100%;
   height: 100%;
@@ -135,6 +146,7 @@ export default {
 }
 .own img {
   display: block;
+  /* width: 80%; */
   margin: auto;
 }
 .own h2 {
