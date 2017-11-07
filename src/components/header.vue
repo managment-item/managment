@@ -14,7 +14,11 @@
       <el-menu-item index="help">帮助中心</el-menu-item>
       <el-menu-item index="2">云</el-menu-item>
       <el-menu-item index="3"><i class="el-icon-search"></i></el-menu-item>
-      <el-menu-item index="message"><i class="el-icon-bell"></i></el-menu-item>
+      <el-menu-item index="message">
+        <el-badge :value="8" class="item">
+          <i class="el-icon-bell"></i>
+        </el-badge>
+      </el-menu-item>
       <el-submenu index="5">
         <template slot="title">账号设置</template>
         <el-menu-item index="information">个人信息</el-menu-item>
@@ -59,26 +63,29 @@ export default {
 };
 </script>
 
-<style scoped>
+<style>
 .header{
   height: 54px;
   line-height: 54px;
-  /* overflow: hidden; */
 }
 .header1{
   padding-left:10px;
   float: left;
 }
-.el-icon-menu{
+.header .item .el-badge__content.is-fixed{
+  top:20px;
+  right:18px;
+}
+.header .el-icon-menu{
   display: inline-block;
   font-size: 40px;
   cursor: pointer;
   vertical-align: middle;
 }
-.logo{
+.header .logo{
   padding-left: 10px;
 }
-.search{
+.header .search{
   float:right;
 }
 </style>

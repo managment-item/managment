@@ -4,8 +4,8 @@
       <p class="title">标准数据项管理</p>
     </div>
     <div class="flow">
-      <el-button type="primary" class="add">新增</el-button>
-      <el-button type="primary" class="set">批量操作</el-button>
+      <el-button class="add">新增</el-button>
+      <el-button class="set">批量操作</el-button>
       <div class="rg clearfix">
         <el-input
           placeholder="请输入内容"
@@ -66,7 +66,7 @@
         </el-table-column>
         <el-table-column label="操作">
           <template slot-scope="scope">
-            <el-tooltip content="编辑" placement="bottom">
+            <el-tooltip content="修改" placement="bottom">
             <i class="el-icon-edit edit"  @click="handleEdit(scope.$index, scope.row)"></i>
             </el-tooltip>
             <el-tooltip content="删除" placement="bottom">
@@ -82,8 +82,10 @@
           @size-change="handleSizeChange"
           @current-change="handleCurrentChange"
           :current-page.sync="currentPage3"
-          :page-size="100"
+          :page-size=10
           layout="prev, pager, next, jumper"
+          prev-text="上一页"
+          next-text="下一页"
           :total="1000">
         </el-pagination>
       </div>
@@ -97,12 +99,12 @@
     data(){
       return{
         tableData2:[],
-        currentPage3: 5,
+        currentPage3: 1,
       }
     },
     mounted:function(){
       this.$http.get("/api/data").then(res => {
-        console.log(res.data);
+        console.log(res.data.data);
         this.tableData2=res.data.data
       });
     },
@@ -112,6 +114,22 @@
       },
       handleDelete(index, row) {
         console.log(index, row);
+        this.$confirm('此操作将永久删除该文件, 是否继续?', '提示', {
+          confirmButtonText: '确定',
+          cancelButtonText: '取消',
+          type: 'warning'
+        }).then(() => {
+          this.tableData2=this.tableData2.splice(index,1);
+          this.$message({
+            type: 'success',
+            message: '删除成功!'
+          });
+        }).catch(() => {
+          this.$message({
+            type: 'info',
+            message: '已取消删除'
+          });
+        });
       },
       toggleSelection(rows) {
         if (rows) {
@@ -175,7 +193,10 @@
 .stManage .rg{
   float:right;
 }
-.stManage .el-input{
+.stManage thead>tr{
+  background: #F3FCF7;
+}
+.stManage .flow .el-input{
   width:200px;
   height: 30px;
   padding-right:32px;
@@ -204,11 +225,11 @@
   cursor: pointer;
 }
 .stManage .edit{
-  padding-right:20px;
+  margin-right:20px;
 }
 .page{
   margin-top:40px;
-  margin-bottom:54px;
+  padding-bottom:54px;
   text-align: center;
 }
 </style>
