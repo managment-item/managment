@@ -130,10 +130,21 @@ export default {
 };
 </script>
 
-<style scoped>
+<style>
 .el-menu-vertical-demo:not(.el-menu--collapse) {
   width: 200px;
-  min-height: 400px;
+}
+.el-menu-item{
+  padding-left: 54px!important;
+}
+.el-menu-item, .el-submenu__title{
+  height: 44px;
+  line-height: 44px;
+}
+.el-submenu .el-menu-item{
+  height: auto;
+  line-height: 24px;
+  font-size: 12px;
 }
 .silde {
   width: 100%;

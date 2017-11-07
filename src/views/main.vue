@@ -37,6 +37,9 @@ export default {
 </script>
 
 <style scoped>
+.el-container,.mains{
+  height: 100%;
+}
 .el-aside{
   width: auto!important;
   height: 100%;
