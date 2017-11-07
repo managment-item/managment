@@ -6,20 +6,21 @@
       </div>
     <div class="search clearfix">
     <el-menu
+      router
       :default-active="activeIndex"
       class="el-menu-demo"
       mode="horizontal"
       active-text-color="#ffd04b">
-      <el-menu-item index="1"><a href="/help">帮助中心</a></el-menu-item>
+      <el-menu-item index="help">帮助中心</el-menu-item>
       <el-menu-item index="2">云</el-menu-item>
       <el-menu-item index="3"><i class="el-icon-search"></i></el-menu-item>
-      <el-menu-item index="4"><a href="/message"><i class="el-icon-bell"></i></a></el-menu-item>
+      <el-menu-item index="message"><i class="el-icon-bell"></i></el-menu-item>
       <el-submenu index="5">
         <template slot="title">账号设置</template>
-        <el-menu-item index="5-1"><a href="/information">个人信息</a></el-menu-item>
-        <el-menu-item index="5-2"><a href="/setting">个人设置</a></el-menu-item>
+        <el-menu-item index="information">个人信息</el-menu-item>
+        <el-menu-item index="setting">个人设置</el-menu-item>
       </el-submenu>
-      <el-menu-item index="6"><a href="/"><i class="el-icon-circle-close-outline"></i></a></el-menu-item>
+      <el-menu-item index="/"><i class="el-icon-circle-close-outline"></i></el-menu-item>
     </el-menu>
     </div>
   </div>

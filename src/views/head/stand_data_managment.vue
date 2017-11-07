@@ -15,9 +15,12 @@
       </div>
     </div>
     <!-- 表格 -->
+    <div class="table">
       <el-table
         ref="multipleTable"
         :data="tableData2"
+        :fit="true"
+        :resizable="true"
         tooltip-effect="dark"
         @selection-change="handleSelectionChange">
         <el-table-column
@@ -63,16 +66,28 @@
         </el-table-column>
         <el-table-column label="操作">
           <template slot-scope="scope">
-            <el-button
-              size="mini"
-              @click="handleEdit(scope.$index, scope.row)">编辑</el-button>
-            <el-button
-              size="mini"
-              type="danger"
-              @click="handleDelete(scope.$index, scope.row)">删除</el-button>
+            <el-tooltip content="编辑" placement="bottom">
+            <i class="el-icon-edit edit"  @click="handleEdit(scope.$index, scope.row)"></i>
+            </el-tooltip>
+            <el-tooltip content="删除" placement="bottom">
+            <i class="el-icon-delete delete" @click="handleDelete(scope.$index, scope.row)"></i>
+            </el-tooltip>
           </template>
         </el-table-column>
       </el-table>
+    </div>
+    <div class="page">
+        <div class="block">
+        <el-pagination
+          @size-change="handleSizeChange"
+          @current-change="handleCurrentChange"
+          :current-page.sync="currentPage3"
+          :page-size="100"
+          layout="prev, pager, next, jumper"
+          :total="1000">
+        </el-pagination>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -81,7 +96,8 @@
     name:"stManage",
     data(){
       return{
-        tableData2:[]
+        tableData2:[],
+        currentPage3: 5,
       }
     },
     mounted:function(){
@@ -108,6 +124,12 @@
       },
       handleSelectionChange(val) {
         this.multipleSelection = val;
+      },
+      handleSizeChange(val) {
+        console.log(`每页 ${val} 条`);
+      },
+      handleCurrentChange(val) {
+        console.log(`当前页: ${val}`);
       }
     }
   })
@@ -120,20 +142,20 @@
   border-top:1px solid #F2F2F2;
   background:#ffffff;
 }
-.tit{
+.stManage .tit{
   padding-top:20px;
   padding-bottom:20px;
   border-bottom:1px solid #F8F8F8;
 }
-.title{
+.stManage .title{
   font-size: 16px;
   padding-left: 12px;
   border-left:2px solid #38CA7C;
 }
-.flow{
+.stManage .flow{
   padding:14px 0px;
 }
-.add,.set{
+.stManage .add,.set{
   font-size: 10px;
   width:80px;
   height: 34px;
@@ -142,36 +164,52 @@
   padding:0px;
   border-color: #9DE5BF;
 }
-.add{
+.stManage .add{
   color:#fff;
   background: #38CA7C;
 }
-.set{
+.stManage .set{
   color:#38CA7C;
   background: #F3FCF7;
 }
-.rg{
+.stManage .rg{
   float:right;
 }
-.el-input{
+.stManage .el-input{
   width:200px;
   height: 30px;
   padding-right:32px;
 }
-.el-input>.el-input__inner{
+.stManage .flow .el-input>.el-input__inner{
   height: 34px;
   border-radius: 30px!important;
   line-height: 34px!important;
   padding-left:10px;
 }
-.el-input__prefix{
+.stManage .flow .el-input__prefix{
   left:165px!important;
 }
-.el-input__icon{
+.stManage .flow .el-input__icon{
   line-height: 34px;
 }
-.educe{
+.stManage .educe{
   color:#D7D7D7;
+  padding-right: 20px;
+}
+.stManage .table{
+  width:95%;
+}
+.stManage .edit,.delete{
+  font-size: 18px;
+  cursor: pointer;
+}
+.stManage .edit{
+  padding-right:20px;
+}
+.page{
+  margin-top:40px;
+  margin-bottom:54px;
+  text-align: center;
 }
 </style>
 
