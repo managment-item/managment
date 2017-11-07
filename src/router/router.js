@@ -6,6 +6,7 @@ import Information from "./../views/head/personal_information.vue"
 import Setting from "./../views/head/setting.vue"
 import Stand_data_managment from "./../views/head/stand_data_managment.vue"
 
+import EditorItem from "./../views/head/editorItem.vue"
 
 const routers=[
     {
@@ -41,6 +42,11 @@ const routers=[
             name:"stand_data_managment",
             path:"/stand_data_managment",
             component:Stand_data_managment,
+          },
+          {
+            name:"editorItem",
+            path:"/editorItem",
+            component:EditorItem,
           },
         ]
     },
