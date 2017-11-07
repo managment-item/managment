@@ -15,33 +15,29 @@
       </div>
     </div>
     <!-- 表格 -->
-      <!-- <el-table
+      <el-table
         ref="multipleTable"
-
+        :data="tableData2"
         tooltip-effect="dark"
-        style="width: 100%"
         @selection-change="handleSelectionChange">
         <el-table-column
-          type="selection"
-          width="55">
+          type="selection">
         </el-table-column>
         <el-table-column
-          label="序号"
-          width="120">
-          <template slot-scope="scope">{{ scope.row.date }}</template>
+          type="index"
+          label="序号">
         </el-table-column>
         <el-table-column
-          prop="name"
-          label="编码"
-          width="120">
+          prop="id"
+          label="编码">
         </el-table-column>
         <el-table-column
-          prop="address"
+          prop="chinese_name"
           label="中文术语"
           show-overflow-tooltip>
         </el-table-column>
         <el-table-column
-          prop=""
+          prop="english_name"
           label="英文术语"
           show-overflow-tooltip>
         </el-table-column>
@@ -51,17 +47,17 @@
           show-overflow-tooltip>
         </el-table-column>
         <el-table-column
-          prop=""
+          prop="range"
           label="取值范围"
           show-overflow-tooltip>
         </el-table-column>
          <el-table-column
-          prop=""
+          prop="unit"
           label="单位"
           show-overflow-tooltip>
         </el-table-column>
          <el-table-column
-          prop=""
+          prop="continue"
           label="连续性"
           show-overflow-tooltip>
         </el-table-column>
@@ -76,7 +72,7 @@
               @click="handleDelete(scope.$index, scope.row)">删除</el-button>
           </template>
         </el-table-column>
-      </el-table> -->
+      </el-table>
   </div>
 </template>
 
@@ -85,12 +81,13 @@
     name:"stManage",
     data(){
       return{
-        data:""
+        tableData2:[]
       }
     },
     mounted:function(){
       this.$http.get("/api/data").then(res => {
         console.log(res.data);
+        this.tableData2=res.data.data
       });
     },
     methods: {
