@@ -11,7 +11,6 @@
           placeholder="请输入内容"
           prefix-icon="el-icon-search">
         </el-input>
-
         <router-link :to="{ path:'/editorItem', query: { id1: 123} }">
         <a class="educe" href="#">导出表格</a>
         </router-link>
