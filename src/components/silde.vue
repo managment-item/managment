@@ -5,6 +5,7 @@
           <h2>John<span v-show="!show">.Smith</span></h2>
         </div>
         <el-menu
+         router
       default-active="1-1"
       class="el-menu-vertical-demo"
       :unique-opened="true"
@@ -20,9 +21,9 @@
           <span>医疗数据管理</span>
         </template>
         <el-menu-item-group>
-          <el-menu-item index="1-1">课题数据录取</el-menu-item>
+          <el-menu-item index="topic_data_admission">课题数据录取</el-menu-item>
           <el-menu-item index="1-2">数据质检</el-menu-item>
-          <el-menu-item index="1-3" ><a href="/stand_data_managment">标准数据项管理</a></el-menu-item>
+          <el-menu-item index="stand_data_managment">标准数据项管理</el-menu-item>
           <el-menu-item index="1-4">数据归一化</el-menu-item>
           <el-menu-item index="1-5">数据清洗</el-menu-item>
           <el-menu-item index="1-6">数据检索</el-menu-item>
