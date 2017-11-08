@@ -35,12 +35,8 @@
           <span>疾病智能诊断分析</span>
         </template>
         <el-menu-item-group>
-          <el-menu-item index="2-1">课题数据录取</el-menu-item>
-          <el-menu-item index="2-2">数据质检</el-menu-item>
-          <el-menu-item index="2-3">标准数据项管理</el-menu-item>
-          <el-menu-item index="2-4">数据归一化</el-menu-item>
-          <el-menu-item index="2-5">数据清洗</el-menu-item>
-          <el-menu-item index="2-6">数据检索</el-menu-item>
+          <el-menu-item index="2-1">疾病诊断展示</el-menu-item>
+          <el-menu-item index="2-2">数据溯源展示</el-menu-item>
         </el-menu-item-group>
       </el-submenu>
       <el-submenu index="3">
@@ -49,12 +45,9 @@
           <span>医疗数据统计分析</span>
         </template>
         <el-menu-item-group>
-          <el-menu-item index="3-1">课题数据录取</el-menu-item>
-          <el-menu-item index="3-2">数据质检</el-menu-item>
-          <el-menu-item index="3-3">标准数据项管理</el-menu-item>
-          <el-menu-item index="3-4">数据归一化</el-menu-item>
-          <el-menu-item index="3-5">数据清洗</el-menu-item>
-          <el-menu-item index="3-6">数据检索</el-menu-item>
+          <el-menu-item index="3-1">人群分类管理</el-menu-item>
+          <el-menu-item index="3-2">分析</el-menu-item>
+          <el-menu-item index="3-3">自定义分析</el-menu-item>
         </el-menu-item-group>
       </el-submenu>
       <el-submenu index="4">
@@ -63,12 +56,11 @@
           <span>医疗数据科研管理</span>
         </template>
         <el-menu-item-group>
-          <el-menu-item index="4-1">课题数据录取</el-menu-item>
-          <el-menu-item index="4-2">数据质检</el-menu-item>
-          <el-menu-item index="4-3">标准数据项管理</el-menu-item>
-          <el-menu-item index="4-4">数据归一化</el-menu-item>
-          <el-menu-item index="4-5">数据清洗</el-menu-item>
-          <el-menu-item index="4-6">数据检索</el-menu-item>
+          <el-menu-item index="4-1">研究方案管理</el-menu-item>
+          <el-menu-item index="4-2">文档管理</el-menu-item>
+          <el-menu-item index="4-3">数据资料管理</el-menu-item>
+          <el-menu-item index="4-4">生物样本管理</el-menu-item>
+          <el-menu-item index="4-5">财务管理</el-menu-item>
         </el-menu-item-group>
       </el-submenu>
       <el-submenu index="5">
@@ -77,12 +69,9 @@
           <span>疾病知识管理</span>
         </template>
         <el-menu-item-group>
-          <el-menu-item index="5-1">课题数据录取</el-menu-item>
-          <el-menu-item index="5-2">数据质检</el-menu-item>
-          <el-menu-item index="5-3">标准数据项管理</el-menu-item>
-          <el-menu-item index="5-4">数据归一化</el-menu-item>
-          <el-menu-item index="5-5">数据清洗</el-menu-item>
-          <el-menu-item index="5-6">数据检索</el-menu-item>
+          <el-menu-item index="5-1">分类1</el-menu-item>
+          <el-menu-item index="5-2">分类2</el-menu-item>
+          <el-menu-item index="5-3">关键字库管理</el-menu-item>
         </el-menu-item-group>
       </el-submenu>
       <el-submenu index="6">
@@ -91,12 +80,10 @@
           <span>标准管理{{show}}</span>
         </template>
         <el-menu-item-group>
-          <el-menu-item index="6-1">课题数据录取</el-menu-item>
-          <el-menu-item index="6-2">数据质检</el-menu-item>
-          <el-menu-item index="6-3">标准数据项管理</el-menu-item>
-          <el-menu-item index="6-4">数据归一化</el-menu-item>
-          <el-menu-item index="6-5">数据清洗</el-menu-item>
-          <el-menu-item index="6-6">数据检索</el-menu-item>
+          <el-menu-item index="6-1">国际标准</el-menu-item>
+          <el-menu-item index="6-2">国家标准</el-menu-item>
+          <el-menu-item index="6-3">术语标准</el-menu-item>
+          <el-menu-item index="6-4">自定义标准</el-menu-item>
         </el-menu-item-group>
       </el-submenu>
     </el-menu>
