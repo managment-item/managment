@@ -88,6 +88,9 @@ export default {
 .header .search{
   float:right;
 }
+.header .el-menu--horizontal .el-submenu>.el-menu{
+  left:-30px
+}
 </style>
 
 

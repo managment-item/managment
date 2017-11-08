@@ -11,7 +11,6 @@
           placeholder="请输入内容"
           prefix-icon="el-icon-search">
         </el-input>
-
         <router-link :to="{ path:'/editorItem', query: { id1: 123} }">
         <a class="educe" href="#">导出表格</a>
         </router-link>
@@ -102,14 +101,20 @@ export default {
   data() {
     return {
       tableData2: [],
-      currentPage3: 1
+      currentPage3: 1,
+      new1:this.$route.params.formNews,
     };
   },
   mounted: function() {
     this.$http.get("/api/data").then(res => {
       console.log(res.data.data);
       this.tableData2 = res.data.data;
+      this.tableData2.push(this.new1)
     });
+  },
+  created:function(){
+    console.log(this.new1);
+    this.tableData2.push(this.new1)
   },
   methods: {
     handleEdit(index, row) {
@@ -117,7 +122,7 @@ export default {
       this.$router.push({
         name: "editorItem",
         params: {
-          row1: 125
+          row1: row
         }
       });
     },
@@ -145,12 +150,8 @@ export default {
     },
     //新增
     add() {
-      alert(125);
       this.$router.push({
         name: "editorItem",
-        params: {
-          dataObj: this.tableData2
-        }
       });
       // this.tableData2.push({
       //   title: "125",

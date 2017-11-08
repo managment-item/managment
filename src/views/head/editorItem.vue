@@ -29,11 +29,11 @@ export default {
   name: "editorItem",
   data() {
     return {
+      dataItem:this.$route.params.row1,
       form: {
         id: "",
         chinese_name: "",
         english_name: "",
-        type: ""
       },
       rules2: {
         id: [{ required: true, message: "请输入编号...", trigger: "blur" }],
@@ -46,12 +46,21 @@ export default {
       }
     };
   },
+  created:function(){
+      // this.form=this.dataItem
+
+  },
   methods: {
     onSubmit() {
+      console.log(this.form)
       this.$refs.ruleForm2.validate(valid => {
         if (valid) {
-          this.$router.push({ name: "stand_data_managment" });
-          console.log(this.form);
+          this.$router.push({
+            name: "stand_data_managment",
+            params: {
+              formNews: this.form
+            }
+          });
         } else {
           return false;
         }
