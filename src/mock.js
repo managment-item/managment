@@ -2,6 +2,7 @@
 const Mock = require('mockjs')
 const Random = Mock.Random;
 
+//标准数据项管理数据
 var articles = [];
 for (let i = 0; i < 50; i++) {
   let newArticleObject = {
@@ -19,10 +20,31 @@ for (let i = 0; i < 50; i++) {
 }
 const data2=Mock.mock(articles)
 
+//疾病诊断展示数据
+var articles1 = [];
+for (let i = 0; i < 25; i++) {
+  let newArticleObject = {
+    idNumber:Random.natural(10000),
+    age:Random.natural(1,100),
+    name:Random.string( 7, 10 ),
+    sexs:Random.cword(),
+    result:"好",
+    continue:"30",
+    chinese_name: Random.cname(),
+  }
+  articles1.push(newArticleObject)
+}
+const data1=Mock.mock(articles1)
+
 
 //使用mockjs模拟数据
 Mock.mock('/api/data', (req, res) => {
     return {
         data: data2
     }
+})
+Mock.mock('/api/data1', (req, res) => {
+  return {
+      data: data1
+  }
 })

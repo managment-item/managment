@@ -35,8 +35,8 @@
           <span>疾病智能诊断分析</span>
         </template>
         <el-menu-item-group>
-          <el-menu-item index="2-1">疾病诊断展示</el-menu-item>
-          <el-menu-item index="2-2">数据溯源展示</el-menu-item>
+          <el-menu-item index="diagnose">疾病诊断展示</el-menu-item>
+          <el-menu-item index="source">数据溯源展示</el-menu-item>
         </el-menu-item-group>
       </el-submenu>
       <el-submenu index="3">

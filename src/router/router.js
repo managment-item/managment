@@ -8,6 +8,9 @@ import Setting from "./../views/head/setting.vue"
 import Stand_data_managment from "./../views/head/stand_data_managment.vue"
 import Topic_data_admission from "./../views/medicalDataManagement/topic_data_admission.vue"
 import EditorItem from "./../views/head/editorItem.vue"
+//疾病诊断分析
+import Diagnose from "./../views/CDC/diagnose.vue"
+import Source from "./../views/CDC/source.vue"
 
 const routers=[
     {
@@ -51,9 +54,19 @@ const routers=[
           },
           {
             name:"editorItem",
-          path:"/editorItem",
-          component:EditorItem,
-        }
+            path:"/editorItem",
+            component:EditorItem,
+          },
+          {
+            name:"diagnose",
+            path:"/diagnose",
+            component:Diagnose,
+          },
+          {
+            name:"source",
+            path:"/source",
+            component:Source,
+          }
         ]
     },
 ]
