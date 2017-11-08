@@ -3,7 +3,7 @@ const Mock = require('mockjs')
 const Random = Mock.Random;
 
 var articles = [];
-for (let i = 0; i < 5; i++) {
+for (let i = 0; i < 50; i++) {
   let newArticleObject = {
     title: Random.csentence(5, 30), //  Random.csentence( min, max )
     id:Random.natural(100,1000),//编码

@@ -102,19 +102,19 @@ export default {
     return {
       tableData2: [],
       currentPage3: 1,
-      new1:this.$route.params.formNews,
+      new1: this.$route.params.formNews
     };
   },
   mounted: function() {
     this.$http.get("/api/data").then(res => {
       console.log(res.data.data);
       this.tableData2 = res.data.data;
-      this.tableData2.push(this.new1)
+      this.tableData2.push(this.new1);
     });
   },
-  created:function(){
-    console.log(this.new1);
-    this.tableData2.push(this.new1)
+  created: function() {
+    // console.log(this.new1);
+    this.tableData2.push(this.new1);
   },
   methods: {
     handleEdit(index, row) {
@@ -151,17 +151,8 @@ export default {
     //新增
     add() {
       this.$router.push({
-        name: "editorItem",
+        name: "editorItem"
       });
-      // this.tableData2.push({
-      //   title: "125",
-      //   id:222,
-      //   english_name:"Jayden",
-      //   range:"50-100",
-      //   unit:"个",
-      //   continue:"30",
-      //   chinese_name: "杨幂",
-      // })
     },
     toggleSelection(rows) {
       if (rows) {
@@ -173,6 +164,7 @@ export default {
       }
     },
     handleSelectionChange(val) {
+      console.log(val);
       this.multipleSelection = val;
     },
     handleSizeChange(val) {
