@@ -5,7 +5,7 @@
           <h2>John<span v-show="!show">.Smith</span></h2>
         </div>
         <el-menu
-         router
+      router
       default-active="1-1"
       class="el-menu-vertical-demo"
       :unique-opened="true"
@@ -23,7 +23,7 @@
         <el-menu-item-group>
           <el-menu-item index="topic_data_admission">课题数据录取</el-menu-item>
           <el-menu-item index="1-2">数据质检</el-menu-item>
-          <el-menu-item index="stand_data_managment">标准数据项管理</el-menu-item>
+          <el-menu-item index="stand_data_managment" >标准数据项管理</el-menu-item>
           <el-menu-item index="1-4">数据归一化</el-menu-item>
           <el-menu-item index="1-5">数据清洗</el-menu-item>
           <el-menu-item index="1-6">数据检索</el-menu-item>
@@ -132,17 +132,17 @@ export default {
 </script>
 
 <style>
-.el-menu-vertical-demo:not(.el-menu--collapse) {
+.silde .el-menu-vertical-demo:not(.el-menu--collapse) {
   width: 200px;
 }
-.el-menu-item{
+.silde .el-menu-item{
   padding-left: 54px!important;
 }
-.el-menu-item, .el-submenu__title{
+.silde .el-menu-item, .el-submenu__title{
   height: 44px;
   line-height: 44px;
 }
-.el-submenu .el-menu-item{
+.silde .el-submenu .el-menu-item{
   height: auto;
   line-height: 24px;
   font-size: 12px;
@@ -152,24 +152,23 @@ export default {
   height: 100%;
   background: #2b2d3c;
 }
-.own {
+.silde .own {
   padding-top: 55px;
   text-align: center;
 }
-.own img {
+.silde .own img {
   display: block;
-  /* width: 80%; */
   margin: auto;
 }
-.own h2 {
+.silde .own h2 {
   color: #ffffff;
   font-size: 14px;
   line-height: 28px;
 }
-.el-submenu .el-menu-item {
+.silde .el-submenu .el-menu-item {
   min-width: auto !important;
 }
-.el-menu {
+.silde .el-menu {
   border: 0px !important;
 }
 </style>

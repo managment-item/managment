@@ -5,15 +5,15 @@
         <div class="grid-content bg-purple center">
           <h2>火星黑洞</h2>
             <el-form :model="data" :rules="rules1" ref="ruleForm1" label-width="100px">
-        <el-form-item label="账号 ：" prop="account">
-          <el-input v-model="data.account" placeholder="账号..."></el-input>
-        </el-form-item>
-        <el-form-item label="密码：" prop="password">
-          <el-input type="password" v-model="data.password" placeholder="密码..."></el-input>
-        </el-form-item>
-        <el-button type="primary" @click="submit">登录</el-button>
-        <!--<el-button class="register" type="text" size="small" @click="show = true">没有账号怎么办？ 去注册！</el-button>-->
-      </el-form>
+              <el-form-item label="账号 ：" prop="account">
+                <el-input v-model="data.account" placeholder="账号..."></el-input>
+              </el-form-item>
+              <el-form-item label="密码：" prop="password">
+                <el-input type="password" v-model="data.password" placeholder="密码..."></el-input>
+              </el-form-item>
+              <el-button type="primary" @click="submit">登录</el-button>
+              <!--<el-button class="register" type="text" size="small" @click="show = true">没有账号怎么办？ 去注册！</el-button>-->
+            </el-form>
         </div>
       </el-col>
     </el-row>

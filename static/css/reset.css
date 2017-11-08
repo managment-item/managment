@@ -24,7 +24,7 @@ address,caption,cite,code,dfn,em,var {font-style:normal;font-weight:normal}  /* 
 caption {display:none;}    /* 重置表格标题为隐藏 */  
 table {width:100%;border-collapse:collapse;border-spacing:0;table-layout:fixed;}    /* 重置table属性 */  
 img{vertical-align:top}  /* 图片在当前行内的垂直位置 */  
-   
+h1,h2,h3,h4,h5{font-weight: normal;}
 /* 页面设置 */  
    
   /* 取消a标签点击后的虚线框 */  
