@@ -15,6 +15,21 @@
     </div>
     <div class="showDiagnose">
       <p>疾病诊断展示</p>
+      <div class="find">
+        <el-input
+          placeholder="请输入记录编号"
+          v-model="input1">
+          <!-- <i slot="prefix" class="el-input__icon el-icon-search"></i> -->
+        </el-input>
+        <el-input
+          placeholder="请输入身份编号"
+          v-model="input2">
+          <!-- <i slot="prefix" class="el-input__icon el-icon-search"></i> -->
+        </el-input>
+        <el-button type="">查询</el-button>
+        <el-button type="">导出</el-button>
+        <el-button type="">分析</el-button>
+      </div>
       <!-- 表格 -->
     <div class="table">
       <el-table
@@ -82,7 +97,9 @@ export default {
   data() {
     return {
       tableData: [],
-      currentPage3: 1
+      currentPage3: 1,
+      input1:"",
+      input2:""
     };
   },
   mounted: function() {
@@ -164,8 +181,17 @@ export default {
   background: #fff;
   padding: 20px;
 }
-.diagnose .table {
+.diagnose .table,.find {
   width: 95%;
+}
+.diagnose .find{
+  margin-top:20px;
+  margin-bottom:20px;
+  text-align: right;
+}
+.diagnose .find .el-input{
+  width:210px;
+  margin-right:20px;
 }
 .page {
   margin-top: 40px;
