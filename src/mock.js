@@ -35,8 +35,6 @@ for (let i = 0; i < 25; i++) {
   articles1.push(newArticleObject)
 }
 const data1=Mock.mock(articles1)
-
-<<<<<<< HEAD
 //数据质检数据
 var articles2 = [];
 for (let i = 0; i < 10; i++) {
@@ -49,8 +47,6 @@ for (let i = 0; i < 10; i++) {
   articles2.push(newArticleObject)
 }
 const data3=Mock.mock(articles2)
-
-=======
 // 课题数据录取
 var topicData = [];
 for(let i=0;i<3;i++){
@@ -62,7 +58,6 @@ for(let i=0;i<3;i++){
   topicData.push(topicDatas)
 }
 const topic_data=Mock.mock(topicData)
->>>>>>> 058075d373f7fa40f6baa98c58c1175cb924785c
 //使用mockjs模拟数据
 // 标准数据项管理数据
 Mock.mock('/api/data', (req, res) => {
@@ -76,18 +71,15 @@ Mock.mock('/api/data1', (req, res) => {
       data: data1
   }
 })
-<<<<<<< HEAD
 //数据质检数据
 Mock.mock('/api/data3', (req, res) => {
   return {
       data: data3
   }
 })
-=======
 Mock.mock('/api/topic_data', (req, res) => {
   return {
       data: topic_data
   }
 })
 
->>>>>>> 058075d373f7fa40f6baa98c58c1175cb924785c
