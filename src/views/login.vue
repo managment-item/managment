@@ -37,7 +37,7 @@ export default {
       submit () {
         this.$refs.ruleForm1.validate((valid) => {
           if (valid) {
-          this.$router.push({name: 'main'})
+          this.$router.push({name: 'topic_data_admission'})
           } else {
             return false
           }

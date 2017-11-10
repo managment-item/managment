@@ -13,13 +13,23 @@ import './assets/css/reset.css'
 // 引入mock模拟数据
 require('./mock')
 //引入ajax请求
+
 import axios from "axios"
-Vue.prototype.$http = axios
+const instance =axios.create({
+  baseURL:Vue.prototype.baseURL,
+  timeout:100000,
+  withCredentials:true
+})
+Vue.prototype.$http = instance
 
 //引入elementui框架
 import ElementUI from 'element-ui'
 // import 'element-ui/lib/theme-default/index.css'
 Vue.use(ElementUI)
+// 引入eCharts图标
+import echarts from 'echarts'
+Vue.prototype.$echarts = echarts 
+
 
 Vue.config.productionTip = false
 
