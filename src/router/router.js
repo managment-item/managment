@@ -11,6 +11,7 @@ import EditorItem from "./../views/head/editorItem.vue"
 //疾病诊断分析
 import Diagnose from "./../views/CDC/diagnose.vue"
 import Source from "./../views/CDC/source.vue"
+import AnalyzeSystem from "./../views/analyze/analyzeSystem.vue"
 
 const routers=[
     {
@@ -66,9 +67,13 @@ const routers=[
             name:"source",
             path:"/source",
             component:Source,
+          },
+          {
+            name:"analyzeSystem",
+            path:"/analyzeSystem",
+            component:AnalyzeSystem,
           }
         ]
     },
 ]
-
 export default routers

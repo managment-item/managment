@@ -45,7 +45,7 @@
           <span>医疗数据统计分析</span>
         </template>
         <el-menu-item-group>
-          <el-menu-item index="3-1">人群分类管理</el-menu-item>
+          <el-menu-item index="analyzeSystem">人群分类管理</el-menu-item>
           <el-menu-item index="3-2">分析</el-menu-item>
           <el-menu-item index="3-3">自定义分析</el-menu-item>
         </el-menu-item-group>
