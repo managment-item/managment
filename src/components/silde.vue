@@ -15,7 +15,7 @@
       background-color="#2b2d3c"
       text-color="#fff"
       active-text-color="#ffd04b">
-      <el-submenu index="1">
+      <el-submenu index="topic_data_admission">
         <template slot="title">
           <i @click="change" class="el-icon-location"></i>
           <span>医疗数据管理</span>
@@ -29,7 +29,7 @@
           <el-menu-item index="1-6">数据检索</el-menu-item>
         </el-menu-item-group>
       </el-submenu>
-      <el-submenu index="2">
+      <el-submenu index="diagnose">
         <template slot="title">
           <i class="el-icon-location"></i>
           <span>疾病智能诊断分析</span>
@@ -39,7 +39,7 @@
           <el-menu-item index="source">数据溯源展示</el-menu-item>
         </el-menu-item-group>
       </el-submenu>
-      <el-submenu index="3">
+      <el-submenu index="analyzeSystem">
         <template slot="title">
           <i class="el-icon-location"></i>
           <span>医疗数据统计分析</span>
