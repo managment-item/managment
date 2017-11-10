@@ -24,6 +24,10 @@ const routers=[
         component:Main,
         children:[
           {
+            path:"/",
+            component:Help,
+          },
+          {
             name:"help",
             path:"/help",
             component:Help,
