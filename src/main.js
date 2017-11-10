@@ -27,8 +27,8 @@ import ElementUI from 'element-ui'
 // import 'element-ui/lib/theme-default/index.css'
 Vue.use(ElementUI)
 // 引入eCharts图标
-// import echarts from 'echarts'
-// Vue.prototype.$echarts = echarts 
+import echarts from 'echarts'
+Vue.prototype.$echarts = echarts 
 
 
 Vue.config.productionTip = false

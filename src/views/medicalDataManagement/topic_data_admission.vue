@@ -41,19 +41,19 @@
 </template>
 <script>
 import DatePicker from "./../../components/datePicker"
-//import stadardDataChart from "./../../components/stadard_data_chart"
+import stadardDataChart from "./../../components/stadard_data_chart"
 export default {
   name:'topic_data_admission',
-  components:{DatePicker},
+  components:{DatePicker,stadardDataChart},
   data(){
     return{
       topicData:[],
     }
   },
   mounted(){
-      this.$http.get("http://apis.juhe.cn/mobile/get?phone=13429667914&key=6b4cfbf728df0ab6cd7f38735f5596ae").then(res => {
+      this.$http.get("/api/topic_data").then(res => {
         console.log(res)
-     //this.topicData=res.data.data;
+     this.topicData=res.data.data;
     });
   }
 }
