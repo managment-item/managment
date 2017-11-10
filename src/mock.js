@@ -36,15 +36,35 @@ for (let i = 0; i < 25; i++) {
 }
 const data1=Mock.mock(articles1)
 
+//数据质检数据
+var articles2 = [];
+for (let i = 0; i < 10; i++) {
+  let newArticleObject = {
+    problemNum:Random.natural(1,100),
+    taskName:Random.string( 3, 6 ),
+    enteringTime:Random.date(),
+    organizationName: Random.cname(),
+  }
+  articles2.push(newArticleObject)
+}
+const data3=Mock.mock(articles2)
 
 //使用mockjs模拟数据
+// 标准数据项管理数据
 Mock.mock('/api/data', (req, res) => {
     return {
         data: data2
     }
 })
+// 疾病诊断展示数据
 Mock.mock('/api/data1', (req, res) => {
   return {
       data: data1
+  }
+})
+//数据质检数据
+Mock.mock('/api/data3', (req, res) => {
+  return {
+      data: data3
   }
 })
