@@ -47,13 +47,24 @@ export default {
 }
 </script>
 
-<style scoped>
-.el-row{
+<style>
+.login{
+  background:rgba(52, 52, 52, 1) url(./../assets/img/login.png)
+}
+.login .el-row{
   margin:0px!important;
 }
-.center{
+.login .center{
   text-align: center;
-  margin-top: 260px
+  margin-top: 200px;
+  color:#fff;
+}
+.login .center h2{
+  margin:100px;
+  font-size: 28px;
+}
+.login .center .el-form-item__label,.login .center .el-form-item__error{
+  color:#fff;
 }
 </style>
 
