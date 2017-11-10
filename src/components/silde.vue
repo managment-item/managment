@@ -6,7 +6,7 @@
         </div>
         <el-menu
       router
-      default-active="1-1"
+      default-active="topic_data_admission"
       class="el-menu-vertical-demo"
       :unique-opened="true"
       :collapse="show"

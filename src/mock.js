@@ -36,7 +36,17 @@ for (let i = 0; i < 25; i++) {
 }
 const data1=Mock.mock(articles1)
 
-
+// 课题数据录取
+var topicData = [];
+for(let i=0;i<3;i++){
+  let topicDatas={
+    title:Random.string( '快使用双截棍',3 ),
+    content:Random.string( '使用Mock Object进行测试，主要是用来模拟那些在应用中不容易构造(如HttpServletRequest必须在Servlet容器中才能构造出来)或者比较复杂的对象(如JDBC中的ResultSet对象)从而使测试顺利进行的工具。', 30, 40 ),
+    date:Random.date('yyyy-MM-dd')
+  }
+  topicData.push(topicDatas)
+}
+const topic_data=Mock.mock(topicData)
 //使用mockjs模拟数据
 Mock.mock('/api/data', (req, res) => {
     return {
@@ -48,3 +58,9 @@ Mock.mock('/api/data1', (req, res) => {
       data: data1
   }
 })
+Mock.mock('/api/topic_data', (req, res) => {
+  return {
+      data: topic_data
+  }
+})
+
