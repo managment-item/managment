@@ -6,12 +6,13 @@
         </div>
         <el-menu
       router
-      default-active="topic_data_admission"
+      default-active="active"
       class="el-menu-vertical-demo"
       :unique-opened="true"
       :collapse="show"
       @open="handleOpen"
       @close="handleClose"
+      @select="handleSelect"
       background-color="#2b2d3c"
       text-color="#fff"
       active-text-color="#ffd04b">
@@ -23,7 +24,7 @@
         <el-menu-item-group>
           <el-menu-item index="topic_data_admission">课题数据录取</el-menu-item>
           <el-menu-item index="dataQualityChecking">数据质检</el-menu-item>
-          <el-menu-item index="stand_data_managment" >标准数据项管理</el-menu-item>
+          <el-menu-item index="stand_data_managment">标准数据项管理</el-menu-item>
           <el-menu-item index="dataNormalization">数据归一化</el-menu-item>
           <el-menu-item index="dataRinse">数据清洗</el-menu-item>
           <el-menu-item index="DataSearch">数据检索</el-menu-item>
@@ -96,6 +97,7 @@ export default {
   name: "silde",
   data() {
     return {
+      active:"topic_data_admission"
       // isCollapse:false
     };
   },
@@ -103,6 +105,10 @@ export default {
     ...mapGetters(["show"])
   },
   methods: {
+    handleSelect(index){
+      alert(index);
+      this.active=index;
+    },
     change:function(){
         this.show=!show
       //  this.$store.dispatch("newShow", this.input);

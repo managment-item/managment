@@ -1,6 +1,7 @@
 <template>
   <div class="source">
       source{{data}}
+
   </div>
 </template>
 
@@ -26,7 +27,8 @@ import $ from 'jquery'
           success: function (res) {
             self.data = res.result
           }
-        })
+        });
+        console.log(localStorage.getItem("a"))
       }
     }
   })

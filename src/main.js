@@ -13,7 +13,6 @@ import './assets/css/reset.css'
 // 引入mock模拟数据
 require('./mock')
 //引入ajax请求
-
 import axios from "axios"
 const instance =axios.create({
   baseURL:Vue.prototype.baseURL,
@@ -28,7 +27,7 @@ import ElementUI from 'element-ui'
 Vue.use(ElementUI)
 // 引入eCharts图标
 import echarts from 'echarts'
-Vue.prototype.$echarts = echarts 
+Vue.prototype.$echarts = echarts
 
 
 Vue.config.productionTip = false

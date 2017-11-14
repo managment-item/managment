@@ -68,7 +68,7 @@
         </el-table-column>
         <el-table-column label="操作">
           <template slot-scope="scope">
-            <el-button type="primary">详情</el-button>
+            <el-button type="primary" @click="local(scope.$index)">详情</el-button>
           </template>
         </el-table-column>
       </el-table>
@@ -109,6 +109,10 @@ export default {
     });
   },
   methods: {
+    local(index){
+        localStorage.setItem("a",index);
+        console.log(localStorage.getItem("a"));
+    },
     toggleSelection(rows) {
       if (rows) {
         rows.forEach(row => {
