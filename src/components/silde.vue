@@ -54,10 +54,10 @@
       <el-submenu index="4">
         <template slot="title">
           <i class="el-icon-location"></i>
-          <span>医疗数据科研管理</span>
+          <span>医疗数据科研管理理</span>
         </template>
         <el-menu-item-group>
-          <el-menu-item index="projectSystem">研究方案管理</el-menu-item>
+          <el-menu-item index="projectSystem">研究方案管</el-menu-item>
           <el-menu-item index="documentSystem">文档管理</el-menu-item>
           <el-menu-item index="informationSystem">数据资料管理</el-menu-item>
           <el-menu-item index="sampleSystem">生物样本管理</el-menu-item>
@@ -78,7 +78,7 @@
       <el-submenu index="6">
         <template slot="title">
           <i class="el-icon-location"></i>
-          <span>标准管理{{show}}</span>
+          <span>标准管理{{show}}{{num}}</span>
         </template>
         <el-menu-item-group>
           <el-menu-item index="internationalSTD">国际标准</el-menu-item>
@@ -98,11 +98,11 @@ export default {
   data() {
     return {
       active:"topic_data_admission"
-      // isCollapse:false
     };
   },
   computed: {
-    ...mapGetters(["show"])
+    ...mapGetters(["show"]),
+    ...mapGetters(["num"])
   },
   methods: {
     handleSelect(index){
@@ -111,14 +111,12 @@ export default {
     },
     change:function(){
         this.show=!show
-      //  this.$store.dispatch("newShow", this.input);
     },
     handleOpen(key, keyPath) {
       console.log(key, keyPath);
     },
     handleClose(key, keyPath) {
       console.log(key, keyPath);
-      // this.show=!this.show
     }
   }
 };
